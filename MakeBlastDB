@@ -1,0 +1,12 @@
+import os
+
+db = input("Do you need to make a BLAST database? Please type Yes or No")
+
+if db == "Yes" or "yes" or "Y" or "YES":
+    path = input("Please type the full path to the fasta file you wish to use.")
+    dbtype = input("Please input the database type (prot or nuc)")
+    output = input("Please enter the full path to the output destination")
+    name = input("Please enter what you wish to name your database")
+    os.system("./makeblastdb -in" + path + "-dbtype " + dbtype + "-out " + output + "-name " + name)
+else:
+    print("ok!")
